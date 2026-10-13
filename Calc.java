@@ -1,3 +1,5 @@
+//Austin Horne
+
 public class Calc {
     //Private data fields
     private double num1;
