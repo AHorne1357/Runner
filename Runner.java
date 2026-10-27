@@ -2,6 +2,7 @@
 //the Calc class exposes the following methods:
 //add, subtract, multiply, divide
 //user is prompted for input - consists of 2 numbers (double)
+
 import java.util.Scanner;
 public class Runner {
     public static void main(String[] args){
@@ -9,10 +10,21 @@ public class Runner {
         Calc myCalculator = new Calc();
         //get user input for two numbers
         Scanner scan = new Scanner(System.in);
+        double n1 = 0.0;
+        double n2 = 0.0;
         System.out.println("Please enter the first number: ");
-        double n1 = scan.nextDouble();
+        while (!scan.hasNextDouble()) {
+            System.out.println("Invalid input. Please enter a valid number: ");
+            scan.next();
+        }
+        n1 = scan.nextDouble();
+
         System.out.println("Please enter the second number: ");
-        double n2 = scan.nextDouble();
+        while (!scan.hasNextDouble()) {
+            System.out.println("Invalid input. Please enter a valid number: ");
+            scan.next();
+        }
+        n2 = scan.nextDouble();
 
         //pass the numbers to the Calc object
         myCalculator.setNum1(n1);
